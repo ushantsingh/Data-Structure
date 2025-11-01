@@ -34,9 +34,12 @@ void addNode(int val){
 
 void disp(){
     temp = first;
-    while(temp!=NULL){
-        cout << temp->data << endl;
+    int i = 1;
+    while (temp != NULL)
+    {
+        cout << "Node"<<i<<"-> "<< temp->data<< endl;
         temp = temp->next;
+        i++;
     }
 }
 
@@ -96,7 +99,7 @@ int main(){
     // cout << "" << endl;
     // addBeforeFirstNode(90);
     // disp();
-    cout << "" << endl;
-    reverseLinkedList();
-    disp();
+    // cout << "" << endl;
+    // reverseLinkedList();
+    // disp();
 }
