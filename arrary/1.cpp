@@ -44,6 +44,20 @@ void disp()
    cout<<temp->data<<endl;
    temp=temp->next;
  }
+
+ void add_After(int x,int y)
+ {
+  temp=first;
+  while(temp->data!=x)
+  
+    temp=temp->next;
+    ttemp=temp->next;
+    p=new node;
+    p->data =y;
+    p-> next=ttemp;
+    temp->next=p;
+  }
+ }
 }
 int main()
 {
@@ -55,4 +69,7 @@ int main()
 	addnode(60);
 	disp();
 
+  printf("Adding new Node :");
+  add_After(30,70);
+  disp();
 }
