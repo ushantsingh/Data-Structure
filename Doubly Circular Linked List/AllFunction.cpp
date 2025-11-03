@@ -112,6 +112,20 @@ void swapLastSecondLast(){
     ttemp = temp;
 }
 
+void swapFirstAndLastNode(){
+    temp=first->prev;
+    ttemp = first->next;
+    p = temp->prev;
+    p->next = first;
+    first->prev = p;
+    first->next = temp;
+    temp->next = ttemp;
+    temp->prev = first;
+    temp->prev = first;
+    ttemp->prev = temp;
+    first = temp;
+}
+
 int main(){
     createFirstNode();
     addNode();
@@ -131,7 +145,10 @@ int main(){
     // delLastNode();
     // disp();
     // cout << endl;
-    swapLastSecondLast();
+    // swapLastSecondLast();
+    // disp();
+    cout << endl;
+    swapFirstAndLastNode();
     disp();
 
     return 0;
