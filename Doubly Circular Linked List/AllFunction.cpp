@@ -47,20 +47,19 @@ void disp(){
 
 void swapFirstSecondNode(){
     cout << "\nSwapping first and second node\n";
-    Node* last = first->prev;
-    Node* second = first->next;
-    Node* third = second->next;
-
-    last->next = second;
-    second->prev = last;
-
-    second->next = first;
-    first->prev = second;
-
-    first->next = third;
-    third->prev = first;
-
-    first = second;
+    temp = first;
+    ttemp = first->next;
+    p = ttemp->next;
+    q = first;
+    while(q->next  !=first){
+        q = q->next;
+    }
+    q->next = ttemp;
+    ttemp->prev = q;
+    ttemp->next = temp;
+    temp->next = p;
+    temp->prev = ttemp;
+    first = ttemp;
 }
 
 void addBeforeFirstNode(){
@@ -71,7 +70,6 @@ void addBeforeFirstNode(){
     ttemp->next = first;
     first->prev = temp;
     temp->next = ttemp;
-    ttemp->prev = temp;
     ttemp->prev = temp;
     first = ttemp;
 }
@@ -121,7 +119,6 @@ void swapFirstAndLastNode(){
     first->next = temp;
     temp->next = ttemp;
     temp->prev = first;
-    temp->prev = first;
     ttemp->prev = temp;
     first = temp;
 }
@@ -138,6 +135,9 @@ int main(){
 
     // swapFirstSecondNode();
     // disp();
+    cout << endl;
+    addBeforeFirstNode();
+    disp();
     // cout << endl;
     // delFirstNode();
     // disp();
@@ -147,9 +147,9 @@ int main(){
     // cout << endl;
     // swapLastSecondLast();
     // disp();
-    cout << endl;
-    swapFirstAndLastNode();
-    disp();
+    // cout << endl;
+    // swapFirstAndLastNode();
+    // disp();
 
     return 0;
 }
