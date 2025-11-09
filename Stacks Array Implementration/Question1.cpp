@@ -62,14 +62,22 @@ int main(){
 
     init();
 
-    while(num>0){
-        digit = num % 10;
-        Push(digit);
+    int arr[Max], count = 0;
+    while(num > 0){
+        arr[count++] = num % 10;
         num /= 10;
     }
 
-    cout << "Reversed Number :" << endl;
-    while(!Empty()){
-        cout << Pop();
+    // Push digits in correct order (leftmost first)
+    for(int i = count - 1; i >= 0; i--){
+        Push(arr[i]);
     }
+
+    int reversed = 0;
+    while(!Empty()){
+        reversed = reversed * 10 + Pop();
+    }
+
+    cout << "Reversed Number : " << reversed << endl;
+    return 0;
 }
