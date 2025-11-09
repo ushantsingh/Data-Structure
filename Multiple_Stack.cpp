@@ -1,3 +1,5 @@
+// Multiple Stack
+
 #include<iostream>
 #define Max 6
 using namespace std;
