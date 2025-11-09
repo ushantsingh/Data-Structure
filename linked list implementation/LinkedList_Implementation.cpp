@@ -1,5 +1,5 @@
 #include<iostream>
-// #define NULL 0
+#define NULL 0
 using namespace std;
 
 struct LStack{
@@ -10,7 +10,7 @@ struct LStack{
 LStack *top, *temp, *ttemp;
 
 void init(){
-    top = temp = NULL;
+    top = temp = ttemp= NULL;
 }
 
 void Push(int x){
@@ -24,7 +24,6 @@ void Push(int x){
 }
 
 int Pop(int x){
-    
     if(top==NULL){
         return -1;
     }
