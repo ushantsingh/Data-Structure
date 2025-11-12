@@ -23,7 +23,7 @@ int Calculate(int o1, int o2, char x){
         }
 }
 
-void post_val(char post[]){
+void post_Eval(char post[]){
     int op1, op2, R=0;
     int i;
     stack<int> s;
@@ -48,6 +48,6 @@ int main(){
     char post[50];
     cout << "Enter postfix expression: ";
     cin >> post;
-    post_val(post);
+    post_Eval(post);
     return 0;
 }
