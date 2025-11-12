@@ -81,7 +81,7 @@ int PopB(){
 int main(){
     init();
     PushA(10);
-    PushB(20);
+    PushB
     PushA(30);
     PushB(40);
     PushA(50);
