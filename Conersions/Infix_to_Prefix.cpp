@@ -51,22 +51,20 @@ int main(){
     int i = 0;
     string str1, str2, str3, str4, str5;
 
-    Operator(); // operator stack
-    Operand();  // operand stack
+    Operator(); 
+    Operand();  
 
     cout << "Enter Infix Representation : ";
     cin >> infix;
 
     while(infix[i] != '\0'){
 
-        // OPERAND
         if (isalnum(infix[i])) {
             string temp = "";
             temp += infix[i];
             Push(p2, temp);
         }
 
-        // '('
         else if(infix[i] == '('){
             string t = "(";
             Push(p1, t);
@@ -75,17 +73,16 @@ int main(){
         // ')'
         else if(infix[i] == ')'){
             while(!Empty(p1) && Top(p1) != "("){
-                str1 = Pop(p2);     // right operand
-                str2 = Pop(p2);     // left operand
-                str3 = Pop(p1);     // operator
+                str1 = Pop(p2);     
+                str2 = Pop(p2);     
+                str3 = Pop(p1);     
 
-                str4 = str3 + str2 + str1; // PREFIX = op + left + right
+                str4 = str3 + str2 + str1; 
                 Push(p2, str4);
             }
-            Pop(p1); // remove '('
+            Pop(p1);
         }
 
-        // OPERATOR
         else {
             while(!Empty(p1) &&
                   (prioroty(Top(p1)[0]) > prioroty(infix[i]) ||
@@ -107,7 +104,6 @@ int main(){
         i++;
     }
 
-    // POP REMAINING OPERATORS
     while(!Empty(p1)){
         str1 = Pop(p2);
         str2 = Pop(p2);
